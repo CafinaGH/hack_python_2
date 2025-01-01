@@ -10,5 +10,16 @@ text: ["a","b"] output => ["2","1"]
 
 def fn_hack_8(s):
     result = s
-    #...
-    return result
+    final = []
+    if len(result) % 2 == 0: 
+        relleno = len(result)
+        for caracter in result:
+            final += str(relleno)
+            relleno -= 1
+        return final
+    else:
+        temporal = s[::-1]
+        for i in range(len(temporal)):
+            final.append(temporal[i] + "-" + str(len(temporal) - i))
+        return final
+
